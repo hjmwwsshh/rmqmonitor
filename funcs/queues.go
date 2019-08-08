@@ -74,7 +74,8 @@ func GetQueues() (qm []*QueueMap, err error) {
 		return
 	}
 
-	qm = make([]*QueueMap, len(queues))
+	//qm = make([]*QueueMap, len(queues))
+	qm = make([]*QueueMap, 0)
 	for _, q := range queues {
 		if !filterQueue(q) {
 			qm = append(qm, q)

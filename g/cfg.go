@@ -20,6 +20,7 @@ type EnableConfig struct {
 type RabbitConfig struct {
 	Host     string `yaml:"host"`
 	Port     int    `yaml:"port"`
+	AMQPPort int    `yaml:"amqpport"
 	User     string `yaml:"user"`
 	Password string `yaml:"password"`
 }

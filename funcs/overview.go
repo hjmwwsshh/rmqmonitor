@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-
+    "strconv"
 	"github.com/barryz/rmqmonitor/g"
 
 	"github.com/streadway/amqp"
@@ -82,7 +82,8 @@ func GetOverview() (result *OverView, err error) {
 
 // GetChannelCost time cost of getting channel
 func GetChannelCost() (getChannelCost float64, err error) {
-	uri := fmt.Sprintf("amqp://%s:%s@127.0.0.1:5672//", g.Config().Rabbit.User, g.Config().Rabbit.Password)
+    port := g.Config().Rabbit.AMQPPort
+	uri := fmt.Sprintf("amqp://%s:%s@%s:%s//", g.Config().Rabbit.User, g.Config().Rabbit.Password, g.Config().Rabbit.Host, strconv.Itoa(port))
 
 	conn, err := amqp.Dial(uri)
 	if err != nil {

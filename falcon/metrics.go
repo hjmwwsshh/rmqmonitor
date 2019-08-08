@@ -159,7 +159,8 @@ func handleJudge() (data []*MetaData) {
 
 	updateCurrentStatsDB(ov.StatisticsDbNode)
 
-	// RabbitMQ Version Compatibility: (<= 3.6.x)
+	// RabbitMQ Version Compatibility: (<= 3.6.x)//
+	// RabbitMQ Version Compatibility: 3.7.17 test successed
 	if ov.StatisticsDbNode == currentNode || len(ov.StatisticsDbNode) == 0 {
 		channelCost, err := funcs.GetChannelCost()
 		if err != nil {

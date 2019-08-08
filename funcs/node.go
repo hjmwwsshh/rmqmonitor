@@ -7,10 +7,16 @@ import (
 
 	"github.com/barryz/rmqmonitor/g"
 )
+// Add Memory.total struct for new RabbitMQ versions
+type Total struct {
+	Erlang          int64   `json:"erlang"`
+	Rss             int64   `json:"rss"`
+	Allocated       int64   `json:"allocated"`
+}
 
 // MemStats ...
 type MemStats struct {
-	Total              int64 `json:"total"`
+	Total              `json:"total"`
 	ConnectionReaders  int64 `json:"connection_readers"`
 	ConnectionWriters  int64 `json:"connection_writers"`
 	ConnectionChannels int64 `json:"connection_channels"`
