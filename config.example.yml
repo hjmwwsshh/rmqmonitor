@@ -23,6 +23,7 @@ http:
 rabbitmq:
   host: 127.0.0.1
   port: 15672
+  amqpport: 5672
   user: admin
   password: admin
 
