@@ -34,7 +34,11 @@ type MetaData struct {
 
 // NewMetric create an new metric
 func NewMetric(name string, value interface{}, tags string) *MetaData {
-	host := g.GetHost()
+	host := g.Config().Endpoint
+	if host == "" { // endpoint配置为""时,使用hostname作为endpoint名
+		host = g.GetHost()
+	}
+	//host := g.GetHost()
 	return &MetaData{
 		Metric:      name,
 		Endpoint:    host,

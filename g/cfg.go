@@ -20,7 +20,7 @@ type EnableConfig struct {
 type RabbitConfig struct {
 	Host     string `yaml:"host"`
 	Port     int    `yaml:"port"`
-	AMQPPort int    `yaml:"amqpport"
+	AMQPPort int    `yaml:"amqpport"`
 	User     string `yaml:"user"`
 	Password string `yaml:"password"`
 }
@@ -57,6 +57,7 @@ type GlobalConfig struct {
 	Debug     bool             `yaml:"debug"`
 	Details   bool             `yaml:"details"`
 	Hostname  string           `yaml:"hostname"`
+	Endpoint  string           `yaml:"endpoint"`
 	Batchsize int              `yaml:"batchsize"`
 	Interval  int64            `yaml:"interval"`
 	Rabbit    *RabbitConfig    `yaml:"rabbitmq"`
